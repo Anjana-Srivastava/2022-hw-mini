@@ -20,7 +20,7 @@
 #error pwm/led_fade example requires a board with a regular LED
 #endif
 
-#define MAX_LED_BRIGHTNESS 255
+#define MAX_LED_BRIGHTNESS 620
 #define MIN_LED_BRIGHTNESS 0
 
 void on_pwm_wrap() {
