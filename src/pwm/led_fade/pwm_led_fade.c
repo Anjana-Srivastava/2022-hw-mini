@@ -20,7 +20,7 @@
 #error pwm/led_fade example requires a board with a regular LED
 #endif
 
-#define MAX_LED_BRIGHTNESS 620
+#define MAX_LED_BRIGHTNESS 255
 #define MIN_LED_BRIGHTNESS 0
 
 void on_pwm_wrap() {
@@ -31,7 +31,7 @@ void on_pwm_wrap() {
     pwm_clear_irq(pwm_gpio_to_slice_num(PICO_DEFAULT_LED_PIN));
 
     if (going_up) {
-        ++fade;
+        fade=fade + 10 ;
         if (fade > MAX_LED_BRIGHTNESS) {
             fade = MAX_LED_BRIGHTNESS;
             going_up = false;
